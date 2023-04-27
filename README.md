@@ -1,12 +1,15 @@
 ## Acerte a Palavra
 
 ##### To-Do
-- [ ] Escrever regras do jogo
-- [ ] Criar programa(jogo) em Go
-- [ ] Prototipo do site
-- [ ] Criar site e estilizar ele
-- [ ] Converter programa para JS
-- [ ] Hospedar site
+- [ ] Escrever regras do jogo  - P1
+- [ ] Criar programa(jogo) em Go  - P2
+- [ ] Prototipo do site - P3
+- [ ] Site - P4
+- [ ] Converter programa para JS - P5
+- [ ] Hospedar site - P6
+
+Barra de Progresso: <br>
+|####----------------------------------------------| 8%
 
 
 
