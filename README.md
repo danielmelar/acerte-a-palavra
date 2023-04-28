@@ -6,7 +6,7 @@ O projeto conta com o uso de duas linguages, Go e JS. A escolha de Go veio pois,
 
 ---
 ##### Passos
-- [ ] Escrever regras do jogo  - P1
+- [x] Escrever regras do jogo  - P1
 - [ ] Criar programa(jogo) em Go  - P2
 - [ ] Prototipo do site - P3
 - [ ] Site - P4
@@ -14,7 +14,7 @@ O projeto conta com o uso de duas linguages, Go e JS. A escolha de Go veio pois,
 - [ ] Hospedar site - P6
 
 Barra de Progresso: <br>
-|#######-------------------------------------------| 14%
+|########------------------------------------------| 16%
 
 
 
