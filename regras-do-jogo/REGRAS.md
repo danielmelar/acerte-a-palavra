@@ -6,7 +6,7 @@ Pode ser jogado em um bar, uma festa ou até mesmo em uma "socialzinha" com os a
 - Pode ser jogado em duplas ou individualmente
 
 ### Regras Gerais
-- É um Jogo de adivinhação, sendo composto por dois tipos de jogadores, os 'acertadores' e os 'ajudantes', sendo o acertador o jogador que terá a tarefa de acertar a palavra, já o ajudante deverá fazer o acertador acertar a palavra.
+- É um Jogo de adivinhação, sendo composto por dois tipos de jogadores, os 'acertadores' e os 'ajudantes', sendo o acertador o jogador que terá a tarefa de acertar a palavra. Já o ajudante deverá fazer o acertador acertar a palavra.
 - A forma que o ajudante irá fazer para o acertador acertar a palavra será decidido pelo grupo. Pode ser feito atraves de mímica, desenhos, adjetivos, descrição, adjetivos, palavras próximas, etc.
 - O acertador não pode ver a palavra!
 ---
