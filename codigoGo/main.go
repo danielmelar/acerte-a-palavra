@@ -3,35 +3,28 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
+var palavras = []string{"verdadeiro", "criança", "jogo", "caderno", "notebook"}
+
+var indice int
+var indiceAleatorio int
+var indiceTemporario int
 
 func main(){
-	palavras := []string{"verdadeiro", "criança", "jogo", "caderno", "notebook"}
-	
-	var indice int
-	var indiceTemporario int
-	var indiceAleatorio int
+		geradorDePalavras()
+}
 
-	for {
-		time.Sleep(500 * time.Millisecond)	
+func geradorDePalavras(){	
 
-		indice = sorteiaIndiceAleatorio(palavras)
-		indiceAleatorio = indice
+	indiceAleatorio = sorteiaIndiceAleatorio(palavras)
 
-		if comparaIndice(indiceAleatorio, indiceTemporario) {
-			indice = sorteiaIndiceAleatorio(palavras)
-			indiceAleatorio = indice
-		} else {
-		
-			fmt.Println("indice Temp: ", indiceTemporario)
-
-			fmt.Println("Indice Alea: ",  indiceAleatorio)
-	
-			fmt.Println(palavras[indiceAleatorio])
-	
-			indiceTemporario = indice
-		}
+	if comparaIndice(indiceAleatorio, indiceTemporario) {
+		indiceAleatorio = sorteiaIndiceAleatorio(palavras)
+	} else {
+		fmt.Println("indice Temp: ", indiceTemporario)
+		fmt.Println("Indice Alea: ",  indiceAleatorio)
+		fmt.Println(palavras[indiceAleatorio])
+		indiceTemporario = indiceAleatorio
 	}
 }
 
@@ -48,3 +41,4 @@ func comparaIndice(a, b int) bool {
 		return false
 	}
 }
+
