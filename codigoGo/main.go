@@ -26,6 +26,7 @@ func main(){
 		switch  inputConvertidoParaInt {
 		case 1:
 			geradorDePalavras()
+			geraMenu()
 		case 2: 
 			fmt.Println("Programa Encerrado")
 			break loop
