@@ -47,10 +47,16 @@ func convertStringParaInt(input string) int{
 }
 
 func geraMenu() {
-	fmt.Println(`"O que desejas?
+	fmt.Print(`
+	========================
+	O que desejas?
 	1 - Gerar nova palavra
-	2 - Para programa`)
+	2 - Para programa
+	========================
+	Input: `)
 	inputText = lerInput()
+
+	fmt.Println("\n")
 	inputConvertidoParaInt = convertStringParaInt(inputText)
 }
 
