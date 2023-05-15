@@ -9,6 +9,8 @@ import (
 )
 var palavras = []string{"verdadeiro", "criança", "jogo", "caderno", "notebook"}
 
+var indiceJaSorteado []int
+
 var indice int
 var indiceAleatorio int
 var indiceTemporario int
@@ -21,12 +23,17 @@ func main(){
 
 	geraMenu()
 
+	geraSwitch()
+}
+
+func geraSwitch() {
 	loop:
 	for {
 		switch  inputConvertidoParaInt {
 		case 1:
 			geradorDePalavras()
 			geraMenu()
+			fmt.Println(indiceJaSorteado)
 		case 2: 
 			fmt.Println("Programa Encerrado")
 			break loop
@@ -73,6 +80,8 @@ func lerInput() string {
 func geradorDePalavras(){	
 
 	indiceAleatorio = sorteiaIndiceAleatorio(palavras)
+
+	indiceJaSorteado = append(indiceJaSorteado, indiceAleatorio)
 
 	if comparaIndice(indiceAleatorio, indiceTemporario) {
 		indiceAleatorio = sorteiaIndiceAleatorio(palavras)
