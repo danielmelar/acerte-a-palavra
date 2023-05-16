@@ -32,8 +32,10 @@ func geraSwitch() {
 		switch  inputConvertidoParaInt {
 		case 1:
 			geradorDePalavras()
-			geraMenu()
+			indiceJaSorteado = append(indiceJaSorteado, indiceAleatorio)	
 			fmt.Println(indiceJaSorteado)
+			geraMenu()
+
 		case 2: 
 			fmt.Println("Programa Encerrado")
 			break loop
@@ -80,8 +82,6 @@ func lerInput() string {
 func geradorDePalavras(){	
 
 	indiceAleatorio = sorteiaIndiceAleatorio(palavras)
-
-	indiceJaSorteado = append(indiceJaSorteado, indiceAleatorio)
 
 	if comparaIndice(indiceAleatorio, indiceTemporario) {
 		indiceAleatorio = sorteiaIndiceAleatorio(palavras)
