@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math/rand"
-	"bufio"
 	"os"
 	"strconv"
+	"time"
 )
+
 var palavras = []string{"verdadeiro", "criança", "jogo", "caderno", "notebook"}
 
 var indiceJaSorteado []int
@@ -19,24 +21,39 @@ var inputText string
 
 var inputConvertidoParaInt int
 
-func main(){
+func main() {
+	for {
+		time.Sleep(200 * time.Millisecond)
+		indiceAleatorio = geradorDePalavras()
+		fmt.Println(palavras[indiceAleatorio])
+	}
+	// geraMenu()
 
-	geraMenu()
-
-	geraSwitch()
+	// geraSwitch()
 }
 
 func geraSwitch() {
-	loop:
+loop:
 	for {
-		switch  inputConvertidoParaInt {
+		switch inputConvertidoParaInt {
 		case 1:
-			geradorDePalavras()
-			indiceJaSorteado = append(indiceJaSorteado, indiceAleatorio)	
-			fmt.Println(indiceJaSorteado)
-			geraMenu()
+			for {
+				geradorDePalavras()
+				fmt.Println("indice Temp: ", indiceTemporario)
+				fmt.Println("Indice Alea: ", indiceAleatorio)
+				fmt.Println(palavras[indiceAleatorio])
+				indiceJaSorteado = append(indiceJaSorteado, indiceAleatorio)
+				fmt.Println(indiceJaSorteado)
+				geraMenu()
+			}
 
-		case 2: 
+			// for _, element := range indiceJaSorteado {
+			// 	if element == indiceAleatorio {
+
+			// 	}
+			// }
+
+		case 2:
 			fmt.Println("Programa Encerrado")
 			break loop
 		default:
@@ -46,9 +63,9 @@ func geraSwitch() {
 	}
 }
 
-func convertStringParaInt(input string) int{
+func convertStringParaInt(input string) int {
 	inputConvertidoParaInt, err := strconv.Atoi(input)
-	if err != nil{
+	if err != nil {
 		fmt.Println(err)
 	}
 
@@ -64,7 +81,6 @@ func geraMenu() {
 	========================
 	Input: `)
 	inputText = lerInput()
-
 	fmt.Println("\n")
 	inputConvertidoParaInt = convertStringParaInt(inputText)
 }
@@ -79,18 +95,19 @@ func lerInput() string {
 
 	return scanner.Text()
 }
-func geradorDePalavras(){	
+func geradorDePalavras() int {
 
-	indiceAleatorio = sorteiaIndiceAleatorio(palavras)
+	indiceAleatorioLocal := sorteiaIndiceAleatorio(palavras)
 
-	if comparaIndice(indiceAleatorio, indiceTemporario) {
-		indiceAleatorio = sorteiaIndiceAleatorio(palavras)
+	if !comparaIndice(indiceAleatorio, indiceTemporario) {
+		indiceAleatorioLocal = sorteiaIndiceAleatorio(palavras)
+		return indiceAleatorioLocal
 	} else {
-		fmt.Println("indice Temp: ", indiceTemporario)
-		fmt.Println("Indice Alea: ",  indiceAleatorio)
-		fmt.Println(palavras[indiceAleatorio])
+		//indiceTemporario = indiceAleatorioLocal
 		indiceTemporario = indiceAleatorio
+		return indiceAleatorioLocal
 	}
+
 }
 
 func sorteiaIndiceAleatorio(array []string) int {
@@ -100,10 +117,9 @@ func sorteiaIndiceAleatorio(array []string) int {
 }
 
 func comparaIndice(a, b int) bool {
-	if a == b{
+	if a == b {
 		return true
-	}else{
+	} else {
 		return false
 	}
 }
-
