@@ -13,9 +13,6 @@ O projeto conta com o uso de duas linguages, Go e JS. A escolha de Go veio pois,
 - [ ] Converter programa para JS - P5
 - [ ] Hospedar site - P6
 
-Barra de Progresso: <br>
-|########------------------------------------------| 16%
-
 
 
 
