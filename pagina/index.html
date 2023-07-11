@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botões Vermelho e Verde</title>
+  <style>
+    body {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        background: rgb(228,8,242);
+        background: linear-gradient(140deg, rgba(228,8,242,1) 0%, rgba(155,197,221,1) 50%, rgba(0,212,255,1) 100%);
+      }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        margin: 1%;
+        border: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        width: 100px;
+        border-radius: 10px;
+    }
+
+    .red-btn {
+        background-color: red;
+    }
+
+    .green-btn {
+        background-color: green;
+    }
+
+    .gerar-nova-palavra {
+      margin: 2%;
+        border: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        height: 30px;
+        border-radius: 10px;
+
+      background-color: blue;
+    }
+
+
+    .rectangles {
+      display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      top: 30%;  
+    }
+
+    .rectangle {
+        width: 200px;
+        height: 50px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .modal {
+      padding: 10%;
+      font-size: 16px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        
+        max-width: 5000px;
+        min-height: auto;
+        overflow: scroll;
+    }
+
+    .open-modal-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .close-modal-btn {
+        background-color: blue;
+        height: 30px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+  <div class="rectangles">
+    PALAVRA ALEATÓRIA:
+    <div class="rectangle">palavra aleatria</div>
+    <button class="gerar-nova-palavra">Gerar nova palavra</button>
+  </div>
+
+  
+<div class="container">
+    <button class="btn red-btn">Errou</button>
+    <button class="btn green-btn">Acertou</button>
+</div>
+<button class="open-modal-btn">Como Jogar</button>
+<div class="modal">
+    <div class="modal-content">
+        <h2>Como Jogar</h2>
+        Este é um jogo simples, fácil e super divertido.
+
+          Pode ser jogado em um bar, uma festa ou até mesmo em uma "socialzinha" com os amigos, não importa. Pode ser jogado em qualquer lugar!
+
+          ### Regras Gerais
+          - É um Jogo de adivinhação, sendo composto por dois tipos de jogadores, os 'acertadores' e os 'ajudantes', sendo o acertador o jogador que terá a tarefa de acertar a palavra. Já o ajudante deverá fazer o acertador acertar a palavra.
+          - A forma que o ajudante irá fazer para o acertador acertar a palavra será decidido pelo grupo. Pode ser feito através de mímica, desenhos, substantivos, adjetivos, sinonimos, antônimos etc.
+          - O acertador não pode ver a palavra!
+          - Pode ser jogado de 2 a n jogadores
+          - Pode ser jogado em duplas ou individualmente
+          ---
+
+          ## REGRAS
+          #### Jogando em Duplas 
+          Para Jogar em duplas, **VERIFIQUE SE O NÚMERO DE JOGADORES É PAR**.
+          1. Divida o grupo em duplas de forma aleatória
+          2. Defina a ordem em que cada dupla irá jogar
+            _ex:_
+            Um grupo de 6 amigos vão jogar, assim dividiram 3 duplas, sendo elas A, B e C. Está será a ordem em que cada dupla irá jogar: <br>
+              Rodada 1: Dupla A<br>
+              Rodada 2: Dupla B<br>
+              Rodada 3: Dupla C<br>
+          3. Agora que sabemos qual dupla irá jogar, defina quem será o 'acertador' dela.
+          5. Quando for novamente a vez de uma dupla, o acertador muda, agora ele será o ajudante e o ex-ajudante será o novo acertador.
+          6. Vence a dupla que fazer mais pontos.
+          7. Após finalizar o jogo, as duplas mudam!
+
+          #### Jogando individualmente
+          Para jogar individualmente, **VERIFIQUE SE O NÚMERO DE JOGADORES É IMPAR**
+          1. Defina o número e/ou a vez de cada jogador
+            _ex:_
+              Um grupo de 5 amigos vão jogar, assim numerando os jogadores de 1 a 5. Sendo o jogador 1 o primeiro a jogar e o 5 o último.
+
+          2. Defina a vez de cada jogo e o que cada jogador será(acertador e/ou ajudante). Seguindo o exemplo anterior, o jogador número 1 irá jogar primeiro como acertador, tendo como ajudante o jogador sucessor, que nesse caso será o jogador 2. Seguindo sucessivamente, na vez do jogador 2 ser o acertador, o jogador 3 será seu ajudante. E assim por diante. <br>
+              <br>rodada 1: acertador: 1 -> ajudante: 2 <br>
+              rodada 2: acertador: 2 -> ajudante: 3 <br>
+              rodada 3: acertador: 3 -> ajudante: 4 <br>
+              rodada 4: acertador: 4 -> ajudante: 5 <br>
+              rodada 5: acertador: 5 -> ajudante: 1 <br>
+          3. Após  todos os jogadores serem os acertadores, o modelo inverte, ou seja, o ajudante não será mais o jogador sucesso, mas sim o antecessor. <br>
+              rodada 6: acertador: 1 -> ajudante: 5 <br>
+              rodada 7: acertador: 2 -> ajudante: 1 <br>
+              rodada 8: acertador: 3 -> ajudante: 2 <br>
+              rodada 9: acertador: 4 -> ajudante: 3 <br>
+              rodada 10: acertador: 5 -> ajudante: 4 <br>
+          4. Após cada acertador jogar com o jogador sucessor e antecessor como ajudante, será somado os pontos obtidos nas duas rodadas.
+          5. Vence o jogador que ficar com mais pontos.
+        <button class="close-modal-btn">Fechar</button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var openModalButton = document.querySelector(".open-modal-btn");
+        var modal = document.querySelector(".modal");
+        var closeModalButton = document.querySelector(".close-modal-btn");
+
+        openModalButton.addEventListener("click", function() {
+            modal.style.display = "flex";
+        });
+
+        closeModalButton.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    });
+</script>
+</body>
+</html>
